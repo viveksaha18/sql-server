@@ -1,0 +1,14 @@
+---VIEWS---
+
+--> View is an object in sql-server which is created and destroyed inside a database.
+--> View is used to retrive the data from more than one data table.
+--> It is a mirrorical representation of a data table.
+--> It is virtual table.
+--> It does not store any data, it is logical representation of the data table.
+--> It is of two types : i) User Defined View ii) System Defined View
+--> View is used for security purpose and it is used to faster interaction of data from the database.
+
+--> Syntax
+Create View view_name 
+As
+Statement
