@@ -59,3 +59,71 @@ Select department, SUM(salary) as tsalary
 from Employees
 GROUP by department
 Having SUM(salary) > 150000
+
+
+-- Question 3
+-- Find the cities where the average salary is greater than 50,000.
+SELECT city, AVG(salary) as avgS
+from Employees
+GROUP BY city
+Having AVG(salary) > 50000
+
+
+
+
+-- Question 4
+-- Find the cities where the total salary is greater than 100,000.
+
+-- Select city, SUM(salary) as tSalary
+-- from Employees
+-- Group By city
+-- Having SUM(salary) > 100000
+
+Select city, tSalary
+from(
+    Select city, SUM(salary) as tSalary
+    from Employees 
+    Group by city
+) as result 
+where tSalary > 100000
+
+
+
+
+
+
+-- Question 5
+
+-- Find the departments where the average salary is greater than 50,000.
+
+-- Select department, AVG(salary) as aSalary
+-- from Employees
+-- Group by department
+-- Having AVG(salary) > 50000
+
+-- Nested Query
+Select department, aSalary
+from(
+    Select department, AVG(salary) as aSalary
+    from Employees
+    GROUP by department
+) as temp
+where aSalary > 50000
+
+
+
+
+-- Question 6
+-- Find the departments where the minimum salary is greater than 40,000.
+-- Select department, MIN(salary) as minSalary
+-- from Employees
+-- Group by department
+-- Having MIN(salary) > 40000
+
+Select department, minSalary
+from(
+    Select department, MIN(salary) as minSalary
+    from Employees
+    group by department
+)as temp
+where minSalary > 40000
